@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>header组件</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/header.css" />
+	</head>
+	<body>
+		<!--header组件-->
+		<div class="header">
+			<div class="container">
+				<div class="logo">
+					<!--<a href="#"><img src="img/logo.jpg" alt="" width="240" height="130"/></a>-->
+				</div>
+				<div class="wechat">
+					<a href="#">
+						<span>手机微信</span>
+						<img src="http://img.alicdn.com/tfs/TB18W1cQFXXXXaWXXXXXXXXXXXX-160-160.png" alt="" width="80" height="80"/>						
+					</a>
+				</div>
+				<div class="search">
+					<div class="Tab-hd">
+						<p>
+							<a herf="#">宝贝</a>
+							<a herf="#">天猫</a>
+							<a herf="#">店铺</a>
+						</p>
+					</div>
+					<div class="search-bd">
+						<form>
+							<input type="text" placeholder="搜一搜"/>
+							<input type="submit" value="搜索"/>
+						</form>
+					</div>
+					<div class="search-ft">
+						<p>
+							<a href="">logo设计</a><b>|</b>
+							<a href="">足球</a><b>|</b>
+							<a href="">妈妈装</a><b>|</b>
+							<a href="">新款男鞋</a><b>|</b>
+							<a href="">新款裤子</a><b>|</b>
+							<a href="">T恤</a><b>|</b>
+							<a href="">毛针织杉</a><b>|</b>
+							<a href="">夹克</a><b>|</b>
+							<a href="">男士外套</a><b>|</b>
+							<a href="">牛仔裤</a><b>|</b>
+							<a href="">沙发</a><b>|</b>
+							<a href="">时尚休闲裤</a><b>|</b>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--主导航-->
+		<div class="container">
+			<div class="nav">
+				<ul>
+					<!--没必要考虑a>li 全部都能被link, a成块已经 够用户点击-->
+					<li><a href="">天猫</a></li>
+					<li><a href="">聚划算</a></li>
+					<li><a href="">天猫超市</a></li>
+					<li><a href="">淘抢购</a></li>
+					<li><a href="">电器城</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		'use strict';
+		
+		/*
+		 * top 样式切换
+		 */
+		$(function () {
+			$('.Tab-hd p a').on('click', function () {
+				$(this).css(
+					{
+						'background': '#ff4200',
+						'color': '#fff',
+						'fontWeight': 'bold'
+					}
+				).siblings().css(
+					{
+						'background': '#fff',
+						'color': '#ff4200',
+						'fontWeight': 'normal'
+					}
+				);
+			})
+		})
+		
+		/*
+		 * logo 图片 样式变化
+		 */
+		$(function () {
+			let timer = setInterval(() => {
+				let temp = $('.logo img').css('-webkit-filter');
+				if (temp === 'grayscale(1)') {
+					$('.logo img').css('-webkit-filter', 'grayscale(0%)' );					
+				} else {
+					$('.logo img').css('-webkit-filter', 'grayscale(100%)' );	
+				}
+			}, 3000);
+		})
+		
+
+	</script>
+</html>

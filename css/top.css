@@ -1,0 +1,162 @@
+@charset "UTF-8";
+/*
+ * top样式 开发完成
+ */
+.top-wrapper {
+  width: 100%;
+  background: #f5f5f5;
+  border-bottom: 1px solid #eee;
+}
+.top-wrapper .container {
+  height: 30px;
+}
+.top-wrapper .container ul.site-nav-bd-l {
+  float: left;
+  height: 30px;
+}
+.top-wrapper .container ul.site-nav-bd-l li {
+  float: left;
+  border-left: 1px solid #f5f5f5;
+  border-right: 1px solid #f5f5f5;
+}
+.top-wrapper .container ul.site-nav-bd-l li .menu-hd {
+  padding-left: 10px;
+  height: 30px;
+  font-size: 0;
+  line-height: 30px;
+}
+.top-wrapper .container ul.site-nav-bd-l li .menu-hd a {
+  font-size: 12px;
+  color: #000;
+}
+.top-wrapper .container ul.site-nav-bd-l li .menu-hd i {
+  font-size: 10px;
+  margin: 0 5px;
+}
+.top-wrapper .container ul.site-nav-bd-l li .menu-bd {
+  display: none;
+  position: relative;
+  top: 0;
+  left: -1px;
+  z-index: 3333;
+}
+.top-wrapper .container ul.site-nav-bd-l li .menu-bd ul.menu-bd-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 250px;
+  max-height: 200px;
+  overflow: auto;
+  border: 1px solid #eee;
+  padding-top: 5px;
+  background: #fff;
+}
+.top-wrapper .container ul.site-nav-bd-l li .menu-bd ul.menu-bd-list li {
+  float: none;
+  height: 30px;
+  line-height: 30px;
+  text-indent: 10px;
+  font-size: 12px;
+  border: 0;
+  cursor: pointer;
+}
+.top-wrapper .container ul.site-nav-bd-l li .menu-bd ul.menu-bd-list li:hover {
+  background: #f5f5f5;
+}
+.top-wrapper .container ul.site-nav-bd-l li:hover {
+  background: #fff;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+.top-wrapper .container ul.site-nav-bd-l li:hover .menu-bd {
+  display: block;
+}
+.top-wrapper .container ul.site-nav-bd-l li:nth-of-type(3) ul.menu-bd-list li {
+  text-align: right;
+  padding-right: 10px;
+}
+.top-wrapper .container ul.site-nav-bd-l li:last-of-type {
+  padding-right: 10px;
+}
+.top-wrapper .container ul.site-nav-bd-r {
+  float: right;
+  height: 30px;
+}
+.top-wrapper .container ul.site-nav-bd-r li {
+  float: left;
+  border-left: 1px solid #f5f5f5;
+  border-right: 1px solid #f5f5f5;
+}
+.top-wrapper .container ul.site-nav-bd-r li .menu-hd {
+  padding-left: 10px;
+  height: 30px;
+  font-size: 0;
+  line-height: 30px;
+}
+.top-wrapper .container ul.site-nav-bd-r li .menu-hd a {
+  font-size: 12px;
+  color: #000;
+}
+.top-wrapper .container ul.site-nav-bd-r li .menu-hd i {
+  font-size: 12px;
+  margin: 0 5px;
+}
+.top-wrapper .container ul.site-nav-bd-r li .menu-hd i.icon-publishgoods_fill {
+  color: red;
+  font-size: 15px;
+}
+.top-wrapper .container ul.site-nav-bd-r li .menu-hd i.icon-collection_fill {
+  color: #ccc;
+  font-size: 15px;
+}
+.top-wrapper .container ul.site-nav-bd-r li .menu-bd {
+  display: none;
+  position: relative;
+  top: 0;
+  left: -1px;
+  background: #fff;
+}
+.top-wrapper .container ul.site-nav-bd-r li .menu-bd ul.menu-bd-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-height: 200px;
+  overflow: auto;
+  border: 1px solid #eee;
+  padding-top: 5px;
+}
+.top-wrapper .container ul.site-nav-bd-r li .menu-bd ul.menu-bd-list li {
+  float: none;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  font-size: 12px;
+  white-space: nowrap;
+  border: 0;
+  cursor: pointer;
+}
+.top-wrapper .container ul.site-nav-bd-r li .menu-bd ul.menu-bd-list li:hover {
+  background: #f5f5f5;
+}
+.top-wrapper .container ul.site-nav-bd-r li:hover {
+  background: #fff;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+.top-wrapper .container ul.site-nav-bd-r li:hover .menu-bd {
+  display: block;
+}
+.top-wrapper .container ul.site-nav-bd-r li:nth-of-type(3) ul.menu-bd-list li {
+  text-align: right;
+  padding-right: 10px;
+}
+.top-wrapper .container ul.site-nav-bd-r li:nth-of-type(4) .menu-hd b {
+  font-size: 12px;
+  padding: 0 10px;
+}
+
+/*
+ * top2 样式  待定开发......................................................
+ */
+
+/*# sourceMappingURL=top.css.map */

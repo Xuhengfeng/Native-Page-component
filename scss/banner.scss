@@ -1,24 +1,29 @@
-@charset 'utf-8';
+@charset "utf-8";
+
+
 
 .banner{
-	overflow: hidden;
 	width: 100%;
 	height: 440px;
-	.bg{
-		position: relative;
-		.img{
+	#bannerRun{
+	    position: relative;
+		#pic{
 			height: 440px;
 			li{
-				img{
-					position: absolute;
-					left: 50%;
-					top: 0;
-					overflow: hidden;
-					transform: translateX(-50%);
-				}
+			    a{
+			        position: absolute;
+			        left: 50%;
+			        top: 0;
+			        transform: translateX(-50%);
+			        img{
+			        	width: 1920px;
+			        	height: 440px;
+			        	cursor: pointer;
+			        }			        
+			    }
 			}
 		}
-		.num{
+		#num{
 			position: absolute;
 			left: 50%;
 			bottom: 20px;
@@ -29,60 +34,153 @@
 				height: 10px;
 				width: 80px;
 				background: #666;
+				cursor: pointer;
+				&:hover{
+					background: #00c3f5;
+				}
 			}
 		}
 	}
 	.bg2{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
+		margin-top: -440px;
 		.container{
-			position: relative;
 			.sidebar-nav{
-				width: 190px;
+			    float: left;
 				ul{
+				    position: relative;
+				    width: 190px;
+				    height: 440px;
 					background: #333;
 					li{
-						padding: 0 10px;
 						letter-spacing: 4px;
 						box-sizing: border-box;
-						a{
-							height: 50px;
-							line-height: 50px;
-							color: #fff;
+						>div:first-child{
+						    padding: 0 10px;
+    						a{
+                                height: 50px;
+                                line-height: 50px;
+                                color: #fff;
+                            }
+                            em{
+                                color: #ccc;
+                            }
 						}
-						em{
-							color: #ccc;
-						}
-						&:hover{
-							background: #fff;
-							a{
-								color: #000;
-							}
-						}
+						.submenu{
+						    display: none;  
+                            position: absolute;
+                            top: 0;
+                            left: 190px;
+                            width: 1000px;
+                            background: #fff; 
+                            .submenu1{
+                                overflow: hidden;
+                                float: left;
+                                width: 640px;
+                                margin: 10px;
+                                background: #fff;
+                                h3{
+                                    text-indent: 30px;
+                                    line-height: 30px;
+                                    height: 30px;
+                                    color: #000;
+                                }
+                                div{
+                                    display: block;
+                                    float: left;
+                                    width: 128px;
+                                    a{
+                                        display: block;
+                                        text-align: center;
+                                        margin: 3px;
+                                        border: 1px solid #ccc;
+                                        img{
+                                            width: 80px;
+                                            height: 80px;
+                                            vertical-align: top;
+                                            transition: all 0.2s ease-in;
+                                        }
+                                        span{
+                                            padding: 5px;
+                                            font-size: 12px;
+                                            line-height: 10px;
+                                        }
+                                    }
+                                    a:hover{
+                                        border: 1px solid red;
+                                    }
+                                    img:hover{
+                                       animation: pulse 1s .2s ease;
+                                    }
+                                }
+                            }
+                            .submenu1-1{
+                                float: left;
+                                width: 300px;
+                                height: 100%;
+                                a{                                    
+                                    display: block;
+                                    img{
+                                        border: 0;
+                                        margin-top: 10px;
+                                    }
+                                }
+                            }
+                        }
 					}
+					li:hover{
+                        background: #fff;
+                        >div:first-child{
+                            a{
+                                color: #000;
+                            }
+                        }
+                        >div:nth-of-type(2){
+                            display: block;
+                        }
+                           
+                    }
 				}
 			}
-			.submenu{
-				position: absolute;
-				left: 190px;
-				top: 0;
-				background: red;	
-			}
-			.left, .right{
-				position: absolute;
-				top: 250px;
-				background: #ccc;
-				color: #fff;
-				padding: 10px;
-			}
-			.left{
-				left: 190px;
-			}
-			.right{
-				right: 0;
-			}
+			
 		}
 	}
+}
+
+.bg2{
+    .container{
+        .left, .right{
+            position: relative;
+            z-index: 100;
+            margin-top: 200px;
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+            padding: 10px;
+            font-size: 32px;   
+            cursor: pointer;         
+        }
+        .left{
+        	float: left;
+        }
+        .right{
+        	float: right;            
+        }            
+    }
+}
+
+@mixin keyframes($name) {
+    @-webit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@include keyframes(pulse) {
+    0%{transform: scale(1)}
+    50%{transform: scale(1.2)}
+    100%{transform: scale(1)}
 }

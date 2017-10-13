@@ -20,6 +20,16 @@ ul, li {
   float: right; }
 
 /*
+ * 阿里字体图标同样样式
+ */
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden; }
+
+/*
  * 可以修改内容宽度
  */
 .container {

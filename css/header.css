@@ -1,35 +1,122 @@
 @charset "UTF-8";
+/*
+ * keyframes动画兼容处理
+ */
+/*
+ * 位移,缩放,旋转动画
+ */
 @-webkit-keyframes wechat {
   0% {
-    transform: translateX(0) scale(2) rotate(0deg);
+    transform: translateX(0) scale(1) rotate(0deg);
+    filter: grayscale(100%);
   }
   50% {
-    transform: translateX(-400px) scale(1.5) rotate(-360deg);
+    transform: translateX(-300px) scale(1.5) rotate(-720deg);
+    filter: grayscale(50%);
   }
   100% {
     transform: translateX(0) scale(1) rotate(360deg);
+    filter: grayscale(0%);
   }
 }
 @-moz-keyframes wechat {
   0% {
-    transform: translateX(0) scale(2) rotate(0deg);
+    transform: translateX(0) scale(1) rotate(0deg);
+    filter: grayscale(100%);
   }
   50% {
-    transform: translateX(-400px) scale(1.5) rotate(-360deg);
+    transform: translateX(-300px) scale(1.5) rotate(-720deg);
+    filter: grayscale(50%);
   }
   100% {
     transform: translateX(0) scale(1) rotate(360deg);
+    filter: grayscale(0%);
   }
 }
 @keyframes wechat {
   0% {
-    transform: translateX(0) scale(2) rotate(0deg);
+    transform: translateX(0) scale(1) rotate(0deg);
+    filter: grayscale(100%);
   }
   50% {
-    transform: translateX(-400px) scale(1.5) rotate(-360deg);
+    transform: translateX(-300px) scale(1.5) rotate(-720deg);
+    filter: grayscale(50%);
   }
   100% {
     transform: translateX(0) scale(1) rotate(360deg);
+    filter: grayscale(0%);
+  }
+}
+/*
+ * 缩放动画
+ */
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-moz-keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*
+ * img 颜色动画
+ */
+@-webkit-keyframes bg {
+  0% {
+    filter: grayscale(100%);
+  }
+  50% {
+    filter: grayscale(50%);
+  }
+  100% {
+    filter: grayscale(0%);
+  }
+}
+@-moz-keyframes bg {
+  0% {
+    filter: grayscale(100%);
+  }
+  50% {
+    filter: grayscale(50%);
+  }
+  100% {
+    filter: grayscale(0%);
+  }
+}
+@keyframes bg {
+  0% {
+    filter: grayscale(100%);
+  }
+  50% {
+    filter: grayscale(50%);
+  }
+  100% {
+    filter: grayscale(0%);
   }
 }
 /*
@@ -55,17 +142,20 @@
 }
 .header .container .logo img {
   vertical-align: top;
-  -webkit-filter: grayscale(100%);
+  -webkit-filter: grayscale(0%);
   transition: all 3s;
 }
 .header .container .wechat {
   position: absolute;
   right: 100px;
   top: 30px;
-  animation: wechat 3s;
   transition: all 3s;
   border: 1px solid #eee;
   background: #fff;
+  /*
+   * 单独调用一个动画
+   */
+  animation: wechat 3s ease;
 }
 .header .container .wechat span {
   text-align: center;
@@ -80,9 +170,22 @@
   display: block;
   padding: 0 10px;
   vertical-align: top;
+  filter: grayscale(100%);
+}
+.header .container .wechat a img:hover {
+  /*
+   * 连续加载两个动画 css3 animation;
+   */
+  animation-name: bg, pulse;
+  animation-duration: 3s, 3s;
+  animation-timing-function: linear, linear;
+  animation-delay: 0, 2s;
+  animation-iteration-count: 1, infinite;
+  animation-fill-mode: forwards, forwards;
+  animation-direction: normal, alternate;
 }
 .header .container .wechat:hover {
-  transform: scale(1.5);
+  animation: pulse 3s;
 }
 .header .container .search {
   width: 500px;

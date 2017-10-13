@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+
+/*
+ * keyframes动画兼容处理
+ */
 @mixin keyframes($a) {
     @-webkit-keyframes #{$a} {
         @content;
@@ -12,11 +16,32 @@
     }
 }
 
+/*
+ * 位移,缩放,旋转动画
+ */
 @include keyframes(wechat) {
-    0% {transform:translateX(0) scale(2) rotate(0deg);}
-    50% {transform:translateX(-400px) scale(1.5) rotate(-360deg);}
-    100% {transform:translateX(0) scale(1) rotate(360deg);}
+    0% {transform: translateX(0) scale(1) rotate(0deg); filter: grayscale(100%)}
+    50% {transform: translateX(-300px) scale(1.5) rotate(-720deg); filter: grayscale(50%)}
+    100% {transform: translateX(0) scale(1) rotate(360deg); filter: grayscale(0%)}
 }  
+
+/*
+ * 缩放动画
+ */
+@include keyframes(pulse) {
+    0%{transform: scale(1)}
+    50%{transform: scale(1.3)}
+    100%{transform: scale(1)}
+}
+
+/*
+ * img 颜色动画
+ */
+@include keyframes(bg){
+    0% {filter: grayscale(100%)}
+    50% {filter: grayscale(50%)}
+    100% {filter: grayscale(0%)}
+}
 
 /*
  * header样式 开发完成
@@ -41,7 +66,7 @@
              */
             img{
                 vertical-align: top;
-                -webkit-filter: grayscale(100%);
+                -webkit-filter: grayscale(0%);
                 transition: all 3s;
             } 
         }
@@ -49,10 +74,13 @@
           position: absolute;
           right: 100px;
           top: 30px;
-          animation: wechat 3s;      
           transition: all 3s;
           border: 1px solid #eee;
           background: #fff;
+          /*
+           * 单独调用一个动画
+           */
+          animation: wechat 3s ease;   
           span{
               text-align: center;
               line-height: 20px;
@@ -65,11 +93,24 @@
                   display: block;
                   padding: 0 10px;
                   vertical-align: top;
+                  filter: grayscale(100%);
+                  &:hover{
+                        /*
+                         * 连续加载两个动画 css3 animation;
+                         */
+                        animation-name:bg, pulse ;  
+                        animation-duration:3s, 3s; 
+                        animation-timing-function:linear, linear;
+                        animation-delay:0, 2s;
+                        animation-iteration-count:1, infinite;
+                        animation-fill-mode:forwards, forwards;
+                        animation-direction:normal, alternate;
+                    }
                 }
             }
-          &:hover{
-              transform: scale(1.5);
-          }
+            &:hover{
+                animation: pulse 3s;
+            }
         }
         .search{
             width: 500px;

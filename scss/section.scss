@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+body{
+    background: #f0f0f0;
+}
+/*
+ * 阿里字体图标同样样式
+ */
+.icon{
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+       &:hover{
+          color: red;
+       }
+    }
+     
+.group1{
+    width: 223px;
+    height: auto;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    h3{
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+        a{
+            img{
+                height: 18px;
+                vertical-align: middle;
+            }
+        }
+        span{
+            position: relative;
+            .scale{
+                position: absolute;
+                top: 18px;
+                right: -50px;
+                z-index: 10;
+                .icon{
+                    display: none;
+                    transition: all 2s ease-in;
+                    background: #fff;
+                    width: 100px;
+                    height: 100px;                    
+                    color: #f30;
+                }
+            }
+            &:hover{
+                .scale{
+                    .icon{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    .group-bd{
+        width: 223px;
+        font-size: 0;
+        a{
+            display: inline-block;
+            width: 111px;
+            text-align: center;
+            margin-top: 10px;
+            img{
+                width: 90px;
+                transition: all .3s ease;
+            }
+            p{
+                color: #000;
+                font-size: 13px;
+                font-family: '宋体' !important;
+                &:nth-of-type(1){
+                    font-weight: bold;
+                    font-size: 15px;
+                }
+            }
+        }
+        a:hover{
+            img{
+                transform: translateX(-5px);
+            }
+            p{
+                color: #f40;
+            }
+        }
+    }
+    .group-ft{
+        border: 1px solid #f0f0f0;
+        a{
+            display: inline-block;
+            margin: 3px 8px;
+            font-size: 13px;
+            line-height: 1;
+            color: #000;
+            &:hover{
+                color: #f40;
+            }
+        }
+    }
+    &:hover{
+        border: 1px solid #f40;
+    }
+}
+

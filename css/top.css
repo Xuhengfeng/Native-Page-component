@@ -9,6 +9,7 @@
 }
 .top-wrapper .container {
   height: 30px;
+  overflow: visible;
 }
 .top-wrapper .container ul.site-nav-bd-l {
   float: left;

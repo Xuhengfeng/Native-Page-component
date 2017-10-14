@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/*
+ * 常用的布局技巧  浮动的  margin的负值运算
+ * 利用了margin的负值 原理(浮动流的逆运算)
+ * 运用较多的是左浮动的  逆运算;
+ */
+.container{
+    .main{
+        width: 100%;
+        float: left;
+        .main-bd{
+            margin: 0 210px;
+            height: 200px;
+            width: auto;
+            background: yellow;
+        }
+    }
+    .left, .right{
+        float: left;
+        width: 200px;
+        height: 200px;
+        background: #f60;
+    }
+    .left{
+        margin-left: -100%;
+    }
+    .right{
+        margin-left: -200px;
+    }
+}

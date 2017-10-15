@@ -9,13 +9,57 @@
 	</head>
 	<body>
 		<div class="container">
+			<div class="title">
+				<h3><span>猜你喜欢的</span></h3>
+				<div class="desc">实时推荐最适合你的宝贝</div>
+			</div>
 			<ul>
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-				<li>4</li>
-				<li>5</li>
+				<li>
+					<a href="#">
+						<img src="http://img.alicdn.com/bao/uploaded/i4/799070117/TB2cv8PuYXlpuFjy1zbXXb_qpXa_!!799070117.jpg_250x250.jpg" alt="" />
+					</a>
+					<div class="desc">
+						<p><a href="#">具船模神奇威水下控潜迷你潜玩遥塑料船 电动船型艇遥控水艇</a></p>
+						<p><span>¥90</span> <span>销量:4</span></p>
+					</div>
+				</li>				
 			</ul>
 		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mock.js"></script>
+		<script src="api/商品列表页.js"></script>
+		<script>
+			'use strict';
+			$.ajax({
+				url: 'http://www.test.com',
+				dataType: 'json',
+				async: false
+			}).done(function(data, status, xhr){
+				let result = data;
+			})
+		</script>
+		<script>
+			'use strict';
+	
+//			/*
+//			 * 遍历解析json数据
+//			 */
+//			for (let item of data2) {
+//				let data = createMock(item);
+//				let template = `
+//					<li>
+//						<a href="#">
+//							<img src="${data.img}" alt="" />
+//						</a>
+//						<div class="desc">
+//							<p><a href="#">具船模神奇威水下控潜迷你潜玩遥塑料船 电动船型艇遥控水艇</a></p>
+//							<p><span>¥90</span> <span>销量:4</span></p>
+//						</div>
+//					</li>
+//				`;
+//				$('ul').append(template);
+//			}
+			
+		</script>
 	</body>
 </html>

@@ -1,13 +1,83 @@
+.container {
+  background: #fff;
+}
+.container .title {
+  padding: 20px 0 10px;
+}
+.container .title h3 {
+  text-align: center;
+}
+.container .title h3 span {
+  position: relative;
+}
+.container .title h3 span::before, .container .title h3 span::after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  height: 0;
+  width: 80px;
+  border-bottom: 1px solid #ccc;
+  top: 10px;
+}
+.container .title h3 span::before {
+  left: -140%;
+}
+.container .title h3 span::after {
+  left: 120%;
+}
+.container .title .desc {
+  text-align: center;
+  font-size: 12px;
+}
 .container ul {
-  height: 210px;
   overflow: hidden;
-  margin-right: -50px; }
-  .container ul li {
-    height: 100px;
-    width: 230px;
-    background: #f50;
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 10px; }
+  margin-left: 20px;
+  margin-right: -20px;
+}
+.container ul li {
+  height: auto;
+  width: 224px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #f0f0f0;
+  box-sizing: border-box;
+}
+.container ul li a img {
+  width: 222px;
+  height: 222px;
+}
+.container ul li .desc {
+  padding: 0 10px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+.container ul li .desc p a {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 12px;
+  margin-top: 5px;
+  color: #000;
+}
+.container ul li .desc p a:hover {
+  text-decoration: underline;
+  color: #f50;
+}
+.container ul li .desc p:nth-of-type(2) {
+  padding: 10px 0;
+  overflow: hidden;
+}
+.container ul li .desc p:nth-of-type(2) span:first-child {
+  float: left;
+  color: #f50;
+}
+.container ul li .desc p:nth-of-type(2) span:nth-of-type(2) {
+  float: right;
+}
+.container ul li:hover {
+  border: 1px solid #f50;
+}
 
 /*# sourceMappingURL=%C9%CC%C6%B7%C1%D0%B1%ED%D2%B3.css.map */
